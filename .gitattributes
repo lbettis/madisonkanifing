@@ -1,0 +1,5 @@
+# Keep Unix line endings so .cpanel.yml and .htaccess work on the Linux server
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.pdf binary

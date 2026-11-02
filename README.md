@@ -49,7 +49,22 @@ Open `index.html` in a browser, or run a local server from this folder:
 npx serve .
 ```
 
-## Publishing with GitHub Pages
+## Publishing on cPanel (kanifing.ljdesignz.com)
+
+The live copy is deployed with cPanel's Git Version Control. `.cpanel.yml` copies only
+the website files into the subdomain's document root, `/media/lbettis/kanifing.ljdesignz.com/`.
+
+1. In cPanel, open **Git™ Version Control** and click **Create**.
+2. Clone URL: `https://github.com/lbettis/madisonkanifing.git` (public, so no key is needed).
+   Repository path: `repositories/madisonkanifing`. Name: `madisonkanifing`.
+3. Click **Manage** > **Pull or Deploy** > **Deploy HEAD Commit**.
+4. After each new push to GitHub: **Update from Remote**, then **Deploy HEAD Commit**.
+
+When HTTPS works on the subdomain, un-comment the three HTTPS lines in `.htaccess`.
+If the site later moves to madisonkanifing.org, change `DEPLOYPATH` in `.cpanel.yml` and
+the addresses in `robots.txt` and `sitemap.xml`.
+
+## Publishing with GitHub Pages (alternative)
 
 In the repository on GitHub: **Settings → Pages → Deploy from a branch**, choose the
 branch and `/ (root)`. To use the madisonkanifing.org domain, add it under

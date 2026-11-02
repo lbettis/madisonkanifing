@@ -1,0 +1,11 @@
+# cPanel Git Version Control deploy script.
+# In cPanel: Git Version Control > Manage > Pull or Deploy > "Update from Remote", then "Deploy HEAD Commit".
+# It copies only the website files into the live folder (never .git, README or other repo files).
+# DEPLOYPATH is the document root of kanifing.ljdesignz.com (shown in cPanel > Domains).
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/media/lbettis/kanifing.ljdesignz.com/
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/cp index.html about.html programs.html committees.html news.html news-trade-mission.html news-medical-supplies.html gallery.html scholarship.html contact.html 404.html robots.txt sitemap.xml .htaccess $DEPLOYPATH
+    - /bin/cp -R assets $DEPLOYPATH
